@@ -18,10 +18,12 @@ function likes(){
         }
       })
       .catch(function(error){
-        errorDisplay = document.querySelector('#modal-message')
+        const modal = document.querySelector('#modal')
+        modal.classList.remove('hidden')
+        const errorDisplay = document.querySelector('#modal-message')
         errorDisplay.innerText = error
         setTimeout(function(){
-          modal = document.querySelector('#modal')
+          
           modal.classList.add('hidden')
         }, 5000)
       })
